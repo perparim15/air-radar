@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AirTraffic Pulse | Live Airport Traffic Monitor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header Section -->
+        <header class="main-header">
+            <div class="header-content">
+                <h1><i class="fas fa-plane-departure"></i> AirTraffic Pulse</h1>
+                <p class="tagline">Real-time Airport Traffic Analytics</p>
+            </div>
+            <div class="header-stats">
+                <div class="stat-card">
+                    <i class="fas fa-plane"></i>
+                    <span class="stat-value" id="total-flights">0</span>
+                    <span class="stat-label">Active Flights</span>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-building"></i>
+                    <span class="stat-value" id="total-airports">0</span>
+                    <span class="stat-label">Monitored Airports</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Airport Selection Panel -->
+            <div class="airport-panel">
+                <div class="panel-header">
+                    <h2>Select Airports</h2>
+                    <div class="search-box">
+                        <input type="text" id="airport-search" placeholder="Search airports...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                </div>
+                <div class="airport-list" id="airport-list">
+                    <!-- Airport items will be dynamically added here -->
+                </div>
+            </div>
+
+            <!-- Map and Analytics Section -->
+            <div class="map-analytics-section">
+                <div class="map-container">
+                    <div id="map"></div>
+                </div>
+                <div class="analytics-panel">
+                    <div class="analytics-header">
+                        <h3>Traffic Analytics</h3>
+                        <div class="time-filter">
+                            <button class="active">Live</button>
+                            <button>24h</button>
+                            <button>7d</button>
+                        </div>
+                    </div>
+                    <div class="analytics-content">
+                        <div class="top-airports">
+                            <h4>Top Airports by Traffic</h4>
+                            <div class="airport-ranking" id="airport-ranking">
+                                <!-- Rankings will be dynamically added here -->
+                            </div>
+                        </div>
+                        <div class="interesting-facts">
+                            <h4>Did You Know?</h4>
+                            <div class="facts-container" id="facts-container">
+                                <!-- Facts will be dynamically added here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- News Feed Section -->
+        <aside class="news-feed">
+            <div class="news-header">
+                <h3>Latest Updates</h3>
+                <button class="refresh-btn"><i class="fas fa-sync-alt"></i></button>
+            </div>
+            <div class="news-container" id="news-container">
+                <!-- News items will be dynamically added here -->
+            </div>
+        </aside>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="config.js"></script>
+    <script src="airport-data.js"></script>
+    <script src="map.js"></script>
+    <script src="analytics.js"></script>
+    <script src="news-feed.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
